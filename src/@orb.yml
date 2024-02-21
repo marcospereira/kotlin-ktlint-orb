@@ -1,6 +1,7 @@
 version: 2.1
 
 description: >
+  ktlint is an anti-bikeshedding Kotlin linter with built-in formatter.
   This orb provides a set of commands and jobs to lint Kotlin code using ktlint.
 
 display:
