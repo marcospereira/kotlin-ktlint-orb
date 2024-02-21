@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=SC2086,SC2002
+
 # ktlint version of default to latest
 KTLINT_VERSION=${KTLINT_VERSION:-latest}
 KTLINT_VERBOSE_INSTALL=${KTLINT_VERBOSE_INSTALL:-false}
@@ -15,6 +17,7 @@ CURL_RETRY_PARAMETERS="--retry 5 --retry-delay 5 --retry-connrefused"
 if [ "$KTLINT_VERSION" = "latest" ]; then
   # Use the HTTP redirection to avoid too many requests to the GitHub API
   location_header=$(
+
     curl --silent --head $CURL_RETRY_PARAMETERS https://github.com/pinterest/ktlint/releases/latest |
     grep -i location
   )
