@@ -24,11 +24,11 @@ jobs:
   # You may want to add additional validation steps to ensure the commands are working as expected.
   command-test:
     docker:
-      - image: cimg/base:current
+      - image: cimg/openjdk:17.0
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - kotlin-ktlint-orb/greet
+      - kotlin-ktlint-orb/install
 workflows:
   test-deploy:
     jobs:
