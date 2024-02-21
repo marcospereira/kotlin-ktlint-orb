@@ -1,0 +1,19 @@
+description: >
+  Installs a version of ktlint or latest if none is provided. The version number must match the release number on https://github.com/pinterest/ktlint/releases.
+
+parameters:
+  version:
+    type: string
+    default: "latest"
+    description: "ktlint version to install. Default is latest."
+  verbose:
+    type: boolean
+    default: false
+    description: "If true, display verbose output for the installation."
+steps:
+  - run:
+      environment:
+        KTLINT_VERSION: <<parameters.version>>
+        KTLINT_VERBOSE_INSTALL: <<parameters.verbose>>
+      name: Install ktlint <<parameters.version>>
+      command: <<include(scripts/install.sh)>>
