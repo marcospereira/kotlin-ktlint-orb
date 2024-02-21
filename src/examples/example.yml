@@ -1,13 +1,17 @@
 description: >
-  Sample example description.
-# Provide a use-case based example for using this orb.
-# Everything in the `usage` section will be displayed in the orb registry.
-# Comments are not retained.
+  Show how to install ktlint and run it on a Kotlin project.
+
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    ktlint: marcospereira/kotlin-ktlint-org@0.0.1
+    jobs:
+      install-ktlint:
+        executor: ktlint/default
+        steps:
+          - ktlint/install:
+            version: "1.1.1" # Optional. Default is "latest"
   workflows:
     use-my-orb:
       jobs:
-        - <orb-name>/<job-name>
+        - install-ktlint
