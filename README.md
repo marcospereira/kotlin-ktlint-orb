@@ -17,6 +17,7 @@ This orb provides a set of commands and jobs to lint Kotlin code using [ktlint](
 We welcome [issues](https://github.com/marcospereira/kotlin-ktlint-orb/issues) to and [pull requests](https://github.com/marcospereira/kotlin-ktlint-orb/pulls) against this repository!
 
 ### How to Publish An Update
+
 1. Merge pull requests with desired changes to the main branch.
     - For the best experience, squash-and-merge and use [Conventional Commit Messages](https://conventionalcommits.org/).
 2. Find the current version of the orb.

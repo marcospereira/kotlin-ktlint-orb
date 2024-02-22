@@ -1,3 +1,7 @@
+## Version 0.0.6 - 2024-Feb-21
+
+- Verbose does not impact `curl` commands anymore. Only sets `set -x` in the installation script. 
+
 ## Version 0.0.5 - 2024-Feb-21
 
 - Fix check for verbose parameter in the installation script.

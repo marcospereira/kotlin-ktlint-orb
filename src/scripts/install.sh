@@ -8,10 +8,8 @@ KTLINT_VERBOSE_INSTALL=${KTLINT_VERBOSE_INSTALL:-false}
 
 echo "Installing ktlint version: $KTLINT_VERSION. Verbose mode? $KTLINT_VERBOSE_INSTALL"
 
-CURL_VERBOSE_PARAMETERS="--silent"
 if [ "$KTLINT_VERBOSE_INSTALL" = "true" ] || [ "$KTLINT_VERBOSE_INSTALL" = "1" ]; then
   set -x
-  CURL_VERBOSE_PARAMETERS="--verbose"
 fi
 
 CURL_RETRY_PARAMETERS="--retry 5 --retry-delay 5 --retry-connrefused"
@@ -29,10 +27,7 @@ fi
 
 KTLINT_VERSION=$(echo "$KTLINT_VERSION" | tr -d '\r' | xargs)
 
-curl -SLO \
-  "$CURL_VERBOSE_PARAMETERS" \
-  $CURL_RETRY_PARAMETERS \
-  "https://github.com/pinterest/ktlint/releases/download/$KTLINT_VERSION/ktlint"
+curl -SLO $CURL_RETRY_PARAMETERS "https://github.com/pinterest/ktlint/releases/download/$KTLINT_VERSION/ktlint"
 
 # Verify the downloaded file signature
 curl --silent --show-error $CURL_RETRY_PARAMETERS https://keybase.io/ktlint/pgp_keys.asc | gpg --import
@@ -43,9 +38,9 @@ chmod +x ktlint
 
 os_id=$(cat /etc/os-release | grep "^ID=" | cut -d'=' -f2 | tr -d '"')
 if [ "$os_id" = "alpine" ]; then
-    if [ "$ID" = 0 ]; then export SUDO=""; else export SUDO="sudo"; fi
+  if [ "$ID" = 0 ]; then export SUDO=""; else export SUDO="sudo"; fi
 else
-    if [[ $EUID == 0 ]]; then export SUDO=""; else export SUDO="sudo"; fi
+  if [[ $EUID == 0 ]]; then export SUDO=""; else export SUDO="sudo"; fi
 fi
 
 $SUDO mv ktlint /usr/local/bin
