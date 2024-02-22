@@ -15,5 +15,5 @@ parameters:
 steps:
   - checkout
   - install:
-      version: << parameters.version >>
-      verbose: << parameters.verbose >>
+      version: "<< parameters.version >>"
+      verbose: "<< parameters.verbose >>"

@@ -1,3 +1,8 @@
+## Version 0.0.4 - 2024-Feb-21
+
+- Fix usage example
+- Also pass `version` and `verbose` as YAML strings to `install` job.
+
 ## Version 0.0.3 - 2024-Feb-21
 
 - Pass `version` and `verbose` parameter to install script as YAML strings.

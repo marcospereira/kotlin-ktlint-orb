@@ -4,13 +4,13 @@ description: >
 usage:
   version: 2.1
   orbs:
-    ktlint: marcospereira/kotlin-ktlint-org@0.0.1
-    jobs:
-      install-ktlint:
-        executor: ktlint/default
-        steps:
-          - ktlint/install:
-            version: "1.1.1" # Optional. Default is "latest"
+    ktlint: marcospereira/kotlin-ktlint-org@0.0.4
+  jobs:
+    install-ktlint:
+      executor: ktlint/default
+      steps:
+        - ktlint/install:
+          version: "1.1.1" # Optional. Default is "latest"
   workflows:
     use-my-orb:
       jobs:
