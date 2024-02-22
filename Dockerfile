@@ -1,4 +1,4 @@
-FROM cimg/openjdk:17.0
+FROM cimg/openjdk:17.0.10
 
 COPY src/scripts/install.sh /install.sh
 
