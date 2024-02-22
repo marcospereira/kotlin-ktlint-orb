@@ -17,9 +17,8 @@ CURL_RETRY_PARAMETERS="--retry 5 --retry-delay 5 --retry-connrefused"
 if [ "$KTLINT_VERSION" = "latest" ]; then
   # Use the HTTP redirection to avoid too many requests to the GitHub API
   location_header=$(
-
     curl --silent --head $CURL_RETRY_PARAMETERS https://github.com/pinterest/ktlint/releases/latest |
-    grep -i location
+    grep -i "^location:"
   )
 
   # See https://www.linuxjournal.com/article/8919
