@@ -9,7 +9,7 @@ parameters:
   verbose:
     type: boolean
     default: false
-    description: "If true, display verbose output for the installation."
+    description: "If true, display verbose output for the installation. Default is false."
 steps:
   - run:
       environment:
