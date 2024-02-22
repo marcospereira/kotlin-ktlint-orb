@@ -9,7 +9,7 @@ KTLINT_VERBOSE_INSTALL=${KTLINT_VERBOSE_INSTALL:-false}
 echo "Installing ktlint version: $KTLINT_VERSION. Verbose mode? $KTLINT_VERBOSE_INSTALL"
 
 CURL_VERBOSE_PARAMETERS="--silent"
-if [ "$KTLINT_VERBOSE_INSTALL" = "true" ]; then
+if [ "$KTLINT_VERBOSE_INSTALL" = "true" ] || [ "$KTLINT_VERBOSE_INSTALL" = "1" ]; then
   set -x
   CURL_VERBOSE_PARAMETERS="--verbose"
 fi

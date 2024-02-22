@@ -4,7 +4,7 @@ description: >
 usage:
   version: 2.1
   orbs:
-    ktlint: marcospereira/kotlin-ktlint-org@0.0.4
+    ktlint: marcospereira/kotlin-ktlint-org@0.0.5
   jobs:
     install-ktlint:
       executor: ktlint/default

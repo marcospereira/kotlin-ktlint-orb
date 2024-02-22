@@ -1,3 +1,7 @@
+## Version 0.0.5 - 2024-Feb-21
+
+- Fix check for verbose parameter in the installation script.
+
 ## Version 0.0.4 - 2024-Feb-21
 
 - Fix usage example
