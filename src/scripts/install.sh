@@ -22,8 +22,10 @@ if [ "$KTLINT_VERSION" = "latest" ]; then
   )
 
   # See https://www.linuxjournal.com/article/8919
-  KTLINT_VERSION=$(echo "${location_header##*/}" | tr -d '\r' | xargs)
+  KTLINT_VERSION="${location_header##*/}"
 fi
+
+KTLINT_VERSION=$(echo "$KTLINT_VERSION" | tr -d '\r' | xargs)
 
 curl -SLO \
   "$CURL_VERBOSE_PARAMETERS" \
