@@ -1,4 +1,4 @@
-FROM cimg/openjdk:17.0.13
+FROM cimg/openjdk:25.0.4
 
 COPY src/scripts/install.sh /install.sh
 
