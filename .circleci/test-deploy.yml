@@ -24,7 +24,7 @@ jobs:
   # You may want to add additional validation steps to ensure the commands are working as expected.
   command-test:
     docker:
-      - image: cimg/openjdk:17.0.11
+      - image: cimg/openjdk:17.0.20
     steps:
       - checkout
       # Run your orb's commands to validate them.
